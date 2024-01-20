@@ -5,7 +5,7 @@ const WebSocket = require("ws")
 const Jimp = require('jimp');
 
 
-bot.onText(/\/gen/, async (message) => {
+bot.onText(/\/pkey/, async (message) => {
     // if (message.chat.id !== -4088440440) return
     if (message.chat.type === "private") return
     try {
