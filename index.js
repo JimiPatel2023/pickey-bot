@@ -85,7 +85,7 @@ bot2.onText(/\/pkey/, async (message) => {
             }
         });
     } catch (error) {
-
+        console.log(error.message);
     }
 })
 
