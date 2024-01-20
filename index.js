@@ -1,11 +1,12 @@
 require('dotenv').config()
 const telegramBot = require('node-telegram-bot-api')
 const bot = new telegramBot(process.env.BOT_TOKEN, { polling: true })
+const bot2 = new telegramBot(process.env.BOT_TOKEN2, { polling: true })
 const WebSocket = require("ws")
 const Jimp = require('jimp');
 
 
-bot.onText(/\/pkey/, async (message) => {
+bot2.onText(/\/pkey/, async (message) => {
     // if (message.chat.id !== -4088440440) return
     if (message.chat.type === "private") return
     try {
