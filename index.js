@@ -68,7 +68,7 @@ bot2.onText(/\/pkey/, async (message) => {
                                 return image.getBufferAsync(Jimp.MIME_JPEG);
                             })
                             .then(imageBuffer => {
-                                bot.sendPhoto(message.chat.id, imageBuffer, {
+                                bot2.sendPhoto(message.chat.id, imageBuffer, {
                                     reply_to_message_id: message.message_id, reply_markup: {
                                         inline_keyboard: [
                                             [{ text: "Click here to Tweet\n(don't forget to attach image)", url: `https://twitter.com/intent/tweet?text=${encodeURI(mess)}` }]
