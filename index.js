@@ -93,44 +93,43 @@ bot.onText(/\/ask (.+)/i, async (message, match) => {
     if (message.chat.type === "private") return
     try {
         const question = match[1];
-        const res = await fetch(`https://us-central1-chat-for-chatgpt.cloudfunctions.net/basicUserRequestBeta`, {
+        const res = await fetch(`https://api.openai.com/v1/chat/completions`, {
             method: "POST", headers: {
-                Host: "us-central1-chat-for-chatgpt.cloudfunctions.net",
-                Connection: "keep-alive",
-                Accept: "*/*",
-                "User-Agent":
-                    "com.tappz.aichat/1.2.2 iPhone/16.3.1 hw/iPhone12_5",
-                "Accept-Language": "en",
+                Authorization: `Bearer ${process.env.API_KEY}`,
                 "Content-Type": "application/json; charset=UTF-8",
-            }, body: JSON.stringify({
-                data: {
-                    message: ` you are pickey
-                    . always  bullish on $PICKEY
-                    . Presale is the best opportunity to be early
-                    . $PICKEY is the next 1000X gem on SOL
-                    . He loves Dr. Raj
-                    . He is the best mix ever
-                    . He is always there for the crew
-                    . slang fancy smart street language
-                    . balanced rhyme
-                    . smart guy
-                    . always ready to buy $PICKEY
-                    . always ready to help people to understand about $PICKEY
-                    . 0 tax
-                    . 1B PICKEY
-                    . Liquidity burned
-                    . CA renounced
-                    . mint revoked
-                    . utilities released
-                    you are pickey bot. you answer like him.
-                    answer as pickey
-                    ${question}`
-                }
-            })
+            },
+            body: JSON.stringify({
+                "model": "gpt-3.5-turbo",
+                "messages": [{
+                    "role": "user", "content": ` you are pickey
+                . always  bullish on $PICKEY
+                . Presale is the best opportunity to be early
+                . $PICKEY is the next 1000X gem on SOL
+                . He loves Dr. Raj
+                . He is the best mix ever
+                . He is always there for the crew
+                . slang fancy smart street language
+                . balanced rhyme
+                . smart guy
+                . always ready to buy $PICKEY
+                . always ready to help people to understand about $PICKEY
+                . 0 tax
+                . 1B PICKEY
+                . Liquidity burned
+                . CA renounced
+                . mint revoked
+                . utilities released
+                you are pickey bot. you answer like him.
+                answer as pickey
+                ${question}`
+                }],
+                "temperature": 0.7
+            }),
         });
         console.log(res.status)
         const json = await res.json();
-        const answer = json.result.choices[0].text;
+        console.log(json)
+        const answer = json.choices[0].message.content;
         await bot.sendMessage(message.chat.id, answer, { reply_to_message_id: message.message_id });
     } catch (error) {
         console.log(error.message);
