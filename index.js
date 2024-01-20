@@ -94,7 +94,15 @@ bot.onText(/\/ask (.+)/i, async (message, match) => {
     try {
         const question = match[1];
         const res = await fetch(`https://us-central1-chat-for-chatgpt.cloudfunctions.net/basicUserRequestBeta`, {
-            method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({
+            method: "POST", headers: {
+                Host: "us-central1-chat-for-chatgpt.cloudfunctions.net",
+                Connection: "keep-alive",
+                Accept: "*/*",
+                "User-Agent":
+                    "com.tappz.aichat/1.2.2 iPhone/16.3.1 hw/iPhone12_5",
+                "Accept-Language": "en",
+                "Content-Type": "application/json; charset=UTF-8",
+            }, body: JSON.stringify({
                 data: {
                     message: ` you are pickey
                     . always  bullish on $PICKEY
