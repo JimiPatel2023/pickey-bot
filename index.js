@@ -120,6 +120,7 @@ bot.onText(/\/ask (.+)/i, async (message, match) => {
                 }
             })
         });
+        console.log(res.status)
         const json = await res.json();
         const answer = json.result.choices[0].text;
         await bot.sendMessage(message.chat.id, answer, { reply_to_message_id: message.message_id });
