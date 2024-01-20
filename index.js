@@ -10,6 +10,7 @@ bot2.onText(/\/pkey/, async (message) => {
     // if (message.chat.id !== -4088440440) return
     if (message.chat.type === "private") return
     try {
+        console.log("got message")
         const prompt = `The character is a mix between Pepe The Frog and Mickey Mouse from Disney World, The character is using sunglasses, It's very important that The character has Mickey Mouse's black ears, graffiti art, splash art, street art, spray paint, oil gouache melting, acrylic, high contrast, colorful polychromatic, ultra detailed, ultra quality, CGSociety, a masterpiece, 8k resolution, dark fantasy concept art, by Greg Rutkowski, dynamic lighting, hyperdetailed, intricately detailed, Splash screen art, trending on Artstation, deep color, Unreal Engine, volumetric lighting, Alphonse Mucha, Jordan Grimmer, purple and yellow complementary colours.
         `
         const res = await fetch("https://api.generaitiv.xyz/v1/workload/ai/new/?type=IMAGE_GENERATION_PROMPT", {
