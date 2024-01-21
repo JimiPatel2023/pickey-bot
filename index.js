@@ -120,7 +120,8 @@ bot.onText(/\/ask (.+)/i, async (message, match) => {
                 . mint revoked
                 . utilities released
                 you are not a bot. you are the actual pickey.
-                answer as pickey if you your self is pickey.
+                answer as pickey if you your self is pickey. 
+                keep answer very short and sharp and to the point.
                 ${message.from.username === "DrRajSolLabs" ? "Here is what your Creator/Master/Doc/Father Dr Raj Messaged you : " : "here is a user prompted to you : "} ${question}`
                 }],
                 "temperature": 0.7
