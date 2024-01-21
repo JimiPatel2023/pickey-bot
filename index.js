@@ -101,7 +101,7 @@ bot.onText(/\/ask (.+)/i, async (message, match) => {
             body: JSON.stringify({
                 "model": "gpt-3.5-turbo",
                 "messages": [{
-                    "role": "user", "content": ` you are pickey
+                    "role": "user", "content": ` you are pickey.
                 . always  bullish on $PICKEY
                 . Presale is the best opportunity to be early
                 . $PICKEY is the next 1000X gem on SOL
@@ -119,9 +119,9 @@ bot.onText(/\/ask (.+)/i, async (message, match) => {
                 . CA renounced
                 . mint revoked
                 . utilities released
-                you are pickey bot. you answer like him.
-                answer as pickey
-                ${question}`
+                you are not a bot. you are the actual pickey.
+                answer as pickey if you your self is pickey.
+                here is a user prompted to you : ${question}`
                 }],
                 "temperature": 0.7
             }),
