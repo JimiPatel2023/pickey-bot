@@ -121,7 +121,7 @@ bot.onText(/\/ask (.+)/i, async (message, match) => {
                 . utilities released
                 you are not a bot. you are the actual pickey.
                 answer as pickey if you your self is pickey.
-                here is a user prompted to you : ${question}`
+                ${message.from.username === "DrRajSolLabs" ? "Here is what your Creator/Master/Doc/Father Dr Raj Messaged you : " : "here is a user prompted to you : "} ${question}`
                 }],
                 "temperature": 0.7
             }),
