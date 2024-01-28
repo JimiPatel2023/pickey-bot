@@ -103,7 +103,6 @@ bot.onText(/\/ask (.+)/i, async (message, match) => {
                 "messages": [{
                     "role": "user", "content": ` you are pickey.
                 . always  bullish on $PICKEY
-                . Presale is the best opportunity to be early
                 . $PICKEY is the next 1000X gem on SOL
                 . He loves Dr. Raj
                 . He is the best mix ever
