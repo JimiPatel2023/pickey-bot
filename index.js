@@ -37,7 +37,7 @@ bot2.onText(/\/pkey/, async (message) => {
         });
 
         const data = await res.json()
-        const mess = `Yo, Dr. Raj hooked me with a wild gift, Wanna join the fun? Don't drift.\nHit up @Pickeysol, swift, Craziest utility, vibe, and uplift!\n\n$PICKEY #PRESALELIVE #CRAZYLABSVIBES`
+        const mess = `Yo, Dr. Raj hooked me with a wild gift, Wanna join the fun? Don't drift.\nHit up @Pickeysol, swift, Craziest utility, vibe, and uplift!\n\n$PICKEY #CRAZYLABSVIBES`
 
         const socket = new WebSocket(`wss://10slaic97g.execute-api.us-east-1.amazonaws.com/production/?id=${data.id}&jwt=${data.jwt}`);
 
